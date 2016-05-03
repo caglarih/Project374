@@ -6,10 +6,20 @@ main = do
   let fileLines = lines content
   let sorted = sort [breakAtSpace x | x <- fileLines]
   let decimals = map (parsehex.reverse) sorted
-  print $ decimals!!5
+  print $ div ((sum.distance) decimals) (foldr (\a -> (+) 1) 0 decimals)
+  print $ distribute (map (\t -> div t (2^117)) decimals) [0]
 
 distance :: [Integer] -> [Integer]
-distance = undefined
+distance []         = []
+distance (x1:x2:xs) = (x2-x1) : distance (x2:xs)
+distance _          = []
+
+distribute :: [Integer] -> [Integer] -> [Integer]
+distribute [] acc  = acc
+distribute xs'@(x:xs) acc@(a:c)
+  | x > 2        = distribute (map (\t -> t - 2) xs') (0:acc)
+  | x > 0        = distribute (map (\t -> t - 2) xs) (1:acc)
+  | otherwise    = distribute xs ((a+1):c)
 
 breakAtSpace :: String -> String
 breakAtSpace(c:cs)
