@@ -1,13 +1,15 @@
 import           Data.List.Ordered
+import           System.Environment
 
 main :: IO()
 main = do
-  content <- readFile "data/zzz_sha1sumresult.txt"
+  arg <- getArgs
+  content <- readFile ("data/zzz_" ++ head arg ++ "result.txt")
   let fileLines = lines content
   let sorted = sort [breakAtSpace x | x <- fileLines]
   let decimals = map (parsehex.reverse) sorted
   print $ div ((sum.distance) decimals) (foldr (\a -> (+) 1) 0 decimals)
-  print $ distribute (map (\t -> div t (16^((length.head)sorted-3))) decimals) [0]
+  print $ distribute (map (\t -> div t (16^((length.head)sorted-2))) decimals) [0]
 
 distance :: [Integer] -> [Integer]
 distance []         = []
