@@ -9,7 +9,7 @@ main = do
   let sorted = sort [breakAtSpace x | x <- fileLines]
   let decimals = map (parsehex.reverse) sorted
   print $ div ((sum.distance) decimals) (foldr (\a -> (+) 1) 0 decimals)
-  print $ distribute (map (\t -> div t (16^((length.head)sorted-2))) decimals) [0]
+  print $ distribute (map (\t -> div t (2^(4*(length.head)sorted-10))) decimals) [0]
 
 distance :: [Integer] -> [Integer]
 distance []         = []
