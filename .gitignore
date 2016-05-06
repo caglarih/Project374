@@ -1,5 +1,6 @@
 dist
 cabal-dev
+*result.txt
 *.o
 *.hi
 *.chi

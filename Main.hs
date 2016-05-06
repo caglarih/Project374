@@ -8,9 +8,9 @@ main = do
   let fileLines = lines content
   let sorted = sort [breakAtSpace x | x <- fileLines]
   let decimals = map (parsehex.reverse) sorted
-  print $ div ((sum.distance) decimals) (foldr (\a -> (+) 1) 0 decimals)
-  print $ distribute (map (\t -> div t (2^(4*(length.head)sorted-10))) decimals) [0]
-  writeFile (head arg ++ "result.txt") "deneme"
+  let average = div ((sum.distance) decimals) (foldr (\a -> (+) 1) 0 decimals)
+  let ranges = distribute (map (\t -> div t (2^(4*(length.head)sorted-10))) decimals) [0]
+  writeFile (head arg ++ "result.txt") (show average ++ "\n" ++ show ranges)
 distance :: [Integer] -> [Integer]
 distance []         = []
 distance (x1:x2:xs) = (x2-x1) : distance (x2:xs)
