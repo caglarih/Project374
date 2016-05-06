@@ -1,6 +1,6 @@
 import           Data.List.Ordered
 import           System.Environment
-
+import           System.IO
 main :: IO()
 main = do
   arg <- getArgs
@@ -10,7 +10,7 @@ main = do
   let decimals = map (parsehex.reverse) sorted
   print $ div ((sum.distance) decimals) (foldr (\a -> (+) 1) 0 decimals)
   print $ distribute (map (\t -> div t (2^(4*(length.head)sorted-10))) decimals) [0]
-
+  writeFile (head arg ++ "result.txt") "deneme"
 distance :: [Integer] -> [Integer]
 distance []         = []
 distance (x1:x2:xs) = (x2-x1) : distance (x2:xs)
