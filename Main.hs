@@ -1,6 +1,7 @@
 import           Data.List.Ordered
 import           System.Environment
 import           System.IO
+
 main :: IO()
 main = do
   arg <- getArgs
@@ -9,12 +10,20 @@ main = do
   let sorted = sort [breakAtSpace x | x <- fileLines]
   let decimals = map (parsehex.reverse) sorted
   let average = div ((sum.distance) decimals) (foldr (\a -> (+) 1) 0 decimals)
-  let ranges = distribute (map (\t -> div t (2^(4*(length.head)sorted-10))) decimals) [0]
-  writeFile (head arg ++ "result.txt") (show average ++ "\n" ++ show ranges)
+  let ranges = distribute (map (\t -> div t (2^(4*(length.head)sorted-16))) decimals) [0]
+  writeFile (head arg ++ "result.txt") (show average ++ "\n")
+  matrixify (head arg ++ "result.txt") $ map (\c -> if c==',' then ' '; else c) $ (tail.show) ranges
+
 distance :: [Integer] -> [Integer]
 distance []         = []
 distance (x1:x2:xs) = (x2-x1) : distance (x2:xs)
 distance _          = []
+
+matrixify :: String -> String -> IO()
+matrixify path [] = appendFile path "end"
+matrixify path xs = do
+  appendFile path $ take (2^8) xs ++ "\n"
+  matrixify path (drop (2^8) xs)
 
 distribute :: [Integer] -> [Integer] -> [Integer]
 distribute [] acc  = acc
