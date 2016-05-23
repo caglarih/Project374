@@ -1786,17 +1786,11 @@ ccce9bcdfbaeb80335b3fefd66ad0ac2 Zakkum-02.Sarapnel.mp3
 49e70dea80269f373c32655907cff68d Zakkum-05.Yüzük.mp3
 245ed50fd21fe7ba1abb10d01d0a8861 Zakkum-06.Anason.mp3
 f141801725afbf8850390b44d08b3a74 Zakkum-AhBuŞarkılarınGözüKörOl.mp3
-d41d8cd98f00b204e9800998ecf8427e Zakkum-Ahtapotlar(acoustic).mp3
-d41d8cd98f00b204e9800998ecf8427e Zakkum-Anliyorsun.mp3
 82364504c52c0b22f177d8976d1a28ac Zakkum-BirazUyu(Düet&CemAdria.mp3
 9e26f7c71e8239acbf3222dc64ca9dab Zakkum-ErkekAdamsin(DüetSeyyal.mp3
-d41d8cd98f00b204e9800998ecf8427e Zakkum&HaykoCepkin-Koma.mp3
 8605a6033801cf124ef6481269a5f0ae Zakkum-Hipokondriyak.mp3
-d41d8cd98f00b204e9800998ecf8427e Zakkum-KapatPerdelerimi.mp3
-d41d8cd98f00b204e9800998ecf8427e Zakkum-Koma(DüetHaykoСepkin).mp3
 e9a4d0053deee28ae20b084db5f82220 Zakkum-Öleceğim.mp3
 fe8063c0f0ff61b68fa63388ad1a368a Zakkum-Uyanıkmısın.mp3
-d41d8cd98f00b204e9800998ecf8427e Zakkum-Zehr-iZakkum(DüetTeoman).mp3
 c8b578a9d26bdf5cc2f05565530eea6a Zara-Kesikçayır.mp3
 096549d9a3abebca4daeab8915a47c7b ZAZ-Je_Veux.mp3
 455b0f48bc1980108a6d51bce49cda9c Zehr-iZakkum(DetTeoman)-Zakkum.mp3
